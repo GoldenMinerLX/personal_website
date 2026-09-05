@@ -3,20 +3,19 @@
   box-sizing: border-box;
 }
 
-body  {
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; 
-  position: fixed;  
+  overflow: hidden;
+  position: fixed;
   top: 0;
   left: 0;
 }
 
-
 .container {
-  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+  font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
   margin: 10%;
   position: relative;
   text-align: right;
@@ -29,70 +28,89 @@ body  {
   border-radius: 2rem;
   border: 2px solid rgba(252, 249, 66, 0.15);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-  overflow:hidden;
+  overflow: hidden;
 }
 
-.container h1  {
-
+.container h1 {
   text-align: right;
   flex-shrink: 1;
-  font-size: clamp(1.5rem , 4vw , 4.5rem);
+  font-size: clamp(1.5rem, 4vw, 4.5rem);
   font-weight: bold;
-  font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+  font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
   letter-spacing: 4px;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #ff6b6b, #f7971e, #a8ff78, #4facfe, #f093fb);
+  background: linear-gradient(
+    135deg,
+    #ff6b6b,
+    #f7971e,
+    #a8ff78,
+    #4facfe,
+    #f093fb
+  );
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 300% 300%;
   animation: gradientShift 12s ease infinite;
-  
-  
 }
-.container h2  {
-
+.container h2 {
   text-align: right;
-  
+
   margin-bottom: 0.5rem;
-  font-size: clamp(1rem , 2vw , 2.5rem);
-  
+  font-size: clamp(1rem, 2vw, 2.5rem);
 }
-.container p  {
+.container p {
   margin-top: 5%;
   font-weight: 100;
   line-height: 1.5;
-  font-size: clamp(1rem , 1.5vw , 1.5rem);
-
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
+  .respH{
+    display: flex;
+  }
+  .respL{
+    display: none;
+  }
 @media (max-width: 1000px) {
-.container h1  {
- text-align: center;
-}
-.container h2  {
- text-align: center;
-}
-.container p  {
- text-align: center;
-}
-#persona{
-min-width : 150px;
-}
+  .container h1 {
+    text-align: center;
+  }
+  .container h2 {
+    text-align: center;
+  }
+  .container p {
+    text-align: center;
+  }
+  #persona {
+    min-width: 150px;
+  }
+  .respH{
+    display: none;
+  }
+  .respL{
+    display: flex;
+  }
 }
 
 
 @keyframes gradientShift {
-  0% { background-position: 0% 0%; }
-  25% { background-position: 100% 0%; }
-  50% { background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-  100% { background-position: 0% 0%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
-
-
 .ball {
-
-  
   height: clamp(50px, 100%, 400px);
   width: clamp(50px, 100%, 400px);
   border-radius: 50%;
@@ -100,24 +118,20 @@ min-width : 150px;
   position: fixed;
   z-index: -2;
   overflow: hidden;
-  filter: saturate(200%) ;
-  
-  
+  filter: saturate(200%);
 }
-#persona{
-  
+#persona {
   object-fit: cover;
   min-height: 150px;
-  
-  height: 20vw ;
-  width:  20vw ;
+
+  height: 20vw;
+  width: 20vw;
   border-radius: 50%;
   border: 1px solid rgba(248, 54, 54, 0.15);
   backdrop-filter: blur(20px) saturate(180%);
   aspect-ratio: 1 / 1;
-  
 }
-.grain  {
+.grain {
   width: 100%;
   height: 100vh;
   background-color: #f50a0a00;
@@ -125,17 +139,16 @@ min-width : 150px;
   filter: url(#noise);
 }
 
-@property --a  {
+@property --a {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
 
-@keyframes spin  {
-  to  {
+@keyframes spin {
+  to {
     --a: 360deg;
   }
-
 }
 
 .notshown {
@@ -143,20 +156,19 @@ min-width : 150px;
 }
 
 @keyframes apear {
-  0%  {
+  0% {
     opacity: 0%;
-    transform: translate(0px ,1000px);
+    transform: translate(0px, 1000px);
   }
 
-  100%  {
+  100% {
     opacity: 100%;
-    transform: translate(0px ,0px);
+    transform: translate(0px, 0px);
   }
-
 }
 
 @keyframes disapear-button {
-  0%  {
+  0% {
     opacity: 100%;
   }
 
@@ -167,21 +179,19 @@ min-width : 150px;
     background-color: rgba(255, 255, 255, 0.123);
   }
 
-  100%  {
+  100% {
     opacity: 0%;
   }
-
 }
 
 @keyframes disapear {
-  100%  {
+  100% {
     opacity: 0%;
   }
 
-  0%  {
+  0% {
     opacity: 100%;
   }
-
 }
 
 @keyframes sparkle-fade {
@@ -199,8 +209,6 @@ min-width : 150px;
   }
 }
 
-
-
 .loadingscreen-me-ball {
   border-radius: 50%;
   height: 25px;
@@ -209,39 +217,51 @@ min-width : 150px;
   display: inline-block;
   margin: 0 15px;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 6px 6px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1), inset 0 -3px 5px rgba(0,0,0,0.2);
-  box-shadow: inset 5px 10px 20px rgba(117, 115, 115, 0.8), inset 0 0 50px rgba(255,0,0,0.3);
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 6px 6px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 5px 10px 20px rgba(117, 115, 115, 0.8),
+    inset 0 0 50px rgba(255, 0, 0, 0.3);
 }
 
 @keyframes loadingscreen-appear {
   0% {
-  transform: scale(0)}
+    transform: scale(0);
+  }
 
   100% {
-  transform: scale(1)}
-
-
-
- }
+    transform: scale(1);
+  }
+}
 
 @keyframes loadingscreen-move {
-  0%  {
+  0% {
     transform: translateX(0px);
   }
 
   100% {
     transform: translateX(60px);
   }
-
 }
 
 #clickbut {
-  font-size: clamp(2rem,5vw,4rem);
-  
+  font-size: clamp(2rem, 5vw, 4rem);
 }
-#button1{
-  border: none;  height: 100vh;width: 100vw; text-align: center; font-size: 45px; color: #777575ec; background: transparent; background-color: #ffffff00; position: fixed; z-index: 10;
+#button1 {
+  border: none;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  font-size: 45px;
+  color: #777575ec;
+  background: transparent;
+  background-color: #ffffff00;
+  position: fixed;
+  z-index: 10;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
